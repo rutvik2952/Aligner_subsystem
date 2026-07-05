@@ -19,6 +19,16 @@
      `uvm_component_utils(aligner_base_test)
 
     //-----------------------------------------------------------------
+    // Method       : New
+    // Argument     : name   -  string for instance name.
+    //                parent - uvm_component for parent instance.
+    // Description : This is the constructor function of this class.
+    //-----------------------------------------------------------------
+     function new(string name = "aligner_base_test",uvm_component parent);
+      super.new(name,parent);
+     endfunction
+
+    //-----------------------------------------------------------------
     // Method       : build_phase
     // Argument     : phase  - uvm_phase for instance phase.
     // Description  : This method is construct the component.

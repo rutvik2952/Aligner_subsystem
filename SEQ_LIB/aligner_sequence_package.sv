@@ -6,6 +6,7 @@
    `include"uvm_macros.svh"
    import uvm_pkg::*;
    import apb_pkg::*;
+   import aligner_env_pkg::*;
    `include"apb_base_sequence.sv"
    `include"aligner_virtual_sequence.sv"
  

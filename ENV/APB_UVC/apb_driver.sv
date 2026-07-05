@@ -27,7 +27,7 @@
   //                parent - uvm_component for parent instance.
   // Description : This is the constructor function of this class.
   //-----------------------------------------------------------------
-  function new(string name ="apb_driver",uvm_componrnt parent);
+  function new(string name ="apb_driver",uvm_component parent);
    super.new(name,parent);
   endfunction
 
@@ -38,7 +38,7 @@
  // Description : This method is collect apb transaction from sequence
  //               through sequencer and call the method send_apb_transaction.   
  //-----------------------------------------------------------------
- virtual task run_phase(uvvm_phase phase);
+ virtual task run_phase(uvm_phase phase);
    super.run_phase(phase);
 
   // wait for Initial Reset
@@ -46,6 +46,7 @@
 
    forever begin
      seq_item_port.get_next_item(req);
+      req.print();
       send_apb_transaction(req); 
      seq_item_port.item_done();
    end 

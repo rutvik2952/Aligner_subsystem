@@ -47,7 +47,7 @@
     super.build_phase(phase);
     if(!uvm_config_db#(apb_config)::get(this,"","CFG",apb_cfg))
      `uvm_fatal(get_type_name(),"Unable to get APB Configuration")
-    begin
+ 
     if(apb_cfg.APB_AGENT == UVM_ACTIVE) begin
        apb_seqr = apb_sequencer::type_id::create("apb_seqr",this);
        apb_dri  = apb_driver::type_id::create("apb_dri",this);
@@ -72,7 +72,7 @@
         apb_moni.vif = vif;
         apb_dri.cfg  = apb_cfg;
       end
-      apb_dri.seq_item_port.connect(apb_seqr.seqq_item_export);  
+      apb_dri.seq_item_port.connect(apb_seqr.seq_item_export);  
     end
     else  apb_moni.vif = vif;
   endfunction  

@@ -1,6 +1,7 @@
 `ifndef ALIGNER_VIRTUAL_SEQUENCER_SV
 `define ALIGNER_VIRTUAL_SEQUENCER_SV
 
+// typedef class apb_sequencer;
  //-----------------------------------------------------------------------------
  // class  : aligner_virtual_sequencer
  // parent : uvm_sequencer

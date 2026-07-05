@@ -1,6 +1,7 @@
 `ifndef ALIGNER_ENVIRONMENT_SV
 `define ALIGNER_ENVIRONMENT_SV
 
+// typedef class apb_environment;
  //-----------------------------------------------------------------------------
  // class  : aligner_environment
  // parent : uvm_env

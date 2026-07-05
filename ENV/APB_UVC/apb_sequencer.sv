@@ -18,7 +18,7 @@
    //                parent - uvm_component for parent instance.
    // Description : This is the constructor function of this class.
    //-----------------------------------------------------------------
-    function new(string namee ="apb_sequencer",uvm_component parent);
+    function new(string name ="apb_sequencer",uvm_component parent);
       super.new(name,parent);
     endfunction
 

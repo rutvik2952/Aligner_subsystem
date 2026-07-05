@@ -25,6 +25,7 @@
     //-----------------------------------------------------------------
      function new(string name ="aligner_virtual_sequence");
         super.new(name);
+        apb_seqc = apb_base_sequence::type_id::create("apb_seqc");
      endfunction
 
     //-----------------------------------------------------------------
@@ -34,7 +35,7 @@
     //-----------------------------------------------------------------
      task body();
        repeat(5)begin
-         `uvm_do_on(apb_seqc,p_sequencer.apb_seqr)
+         `uvm_do_on(apb_seqc.trans,p_sequencer.apb_seqr)
        end
      endtask
    
