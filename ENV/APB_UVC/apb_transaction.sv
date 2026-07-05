@@ -10,7 +10,8 @@
   rand apb_operation_t         apb_operation;
   rand bit[APB_ADDR_WIDTH-1:0] apb_addr;
   rand bit[APB_DATA_WIDTH-1:0] apb_write_data;
-       bit[APB_DATA_WIDTH-1:0] apb_read_data; 
+       bit[APB_DATA_WIDTH-1:0] apb_read_data;
+       apb_responce_t          apb_responce; 
 
  //-----------------------------------------------------------------------
  // Factory Registration
@@ -20,6 +21,7 @@
  `uvm_field_int(apb_addr,UVM_ALL_ON)
  `uvm_field_int(apb_write_data,UVM_ALL_ON)
  `uvm_field_int(apb_read_data,UVM_ALL_ON)
+ `uvm_field_enum(apb_responce_t,apb_responce,UVM_ALL_ON)
  `uvm_object_utils_end
 
 

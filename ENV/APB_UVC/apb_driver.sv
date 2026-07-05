@@ -46,8 +46,10 @@
 
    forever begin
      seq_item_port.get_next_item(req);
+     `uvm_info(get_type_name(),"APB UVC Driver Send the New Transaction",UVM_LOW)
       req.print();
       send_apb_transaction(req); 
+     `uvm_info(get_type_name(), "APB UVC Driver Transaction Complete",UVM_LOW)
      seq_item_port.item_done();
    end 
  endtask
