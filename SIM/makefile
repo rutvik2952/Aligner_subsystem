@@ -32,12 +32,14 @@ PROJ_DIR = +incdir+../COMMON\
 TOP = ../TOP/aligner_top.sv
 
 ##TEST
-TEST1 =aligner_base_test
+TEST1_NAME =aligner_base_test
  
 
 # Compile Subsystem
 comp:
 	vlog $(rtl) $(aligner_package) $(TOP) $(PROJ_DIR) 
       
+TEST1:
+	vsim  -voptargs=+acc aligner_tb_top +UVM_TESTNAME=$(TEST1_NAME) 
 sanity :
-	vsim aligner_tb_top -l LOG/$(TEST1).log -wlf $(TEST1).wlf -c -do "run -all;exit" +UVM_TESTNAME=$(TEST1)      	
+	vsim aligner_tb_top -l LOG/$(TEST1_NAME).log -wlf LOG/$(TEST1_NAME).wlf -c -do "run -all;exit" +UVM_TESTNAME=$(TEST1_NAME)      	

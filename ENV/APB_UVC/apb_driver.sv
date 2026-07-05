@@ -83,7 +83,14 @@
       join_any
       disable fork;
       if(wait_for_ready==1) `uvm_error(get_type_name(), "PREADY is Not Asserted")
-      @(posedge vif.PCLK);        
+      @(posedge vif.PCLK); 
+       vif.PENABLE <= 0;
+       vif.PSEL    <= 0;
+       vif.PADDR   <= 0;
+       vif.PWERITE <= 0;
+       vif.PWDATA  <= 0;
+      @(posedge vif.PCLK); 
+ 
   endtask
 
 endclass
